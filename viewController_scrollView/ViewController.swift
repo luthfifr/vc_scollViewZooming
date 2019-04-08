@@ -18,7 +18,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         
         imageView.image = UIImage(named: "IMG_6866")
-        imageView.contentMode = UIViewContentMode.scaleAspectFit
+        imageView.contentMode = UIView.ContentMode.scaleAspectFit
         
         scrollView.delegate = self
         setZoomScale()
@@ -63,7 +63,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         scrollView.zoomScale = 1.0
     }
     
-    func handleDoubleTap(recognizer: UITapGestureRecognizer) {
+    @objc func handleDoubleTap(recognizer: UITapGestureRecognizer) {
         if (scrollView.zoomScale > scrollView.minimumZoomScale) {
             scrollView.setZoomScale(scrollView.minimumZoomScale, animated: true)
         } else {
